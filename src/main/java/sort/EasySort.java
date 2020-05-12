@@ -45,7 +45,7 @@ public class EasySort {
 
 
     /**
-     * 冒泡排序
+     * 冒泡排序(理论意义多，实际用的少)
      * @param a 待排序数组
      * @param n 数组长度
      */
