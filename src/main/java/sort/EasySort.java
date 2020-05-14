@@ -14,6 +14,37 @@ public class EasySort {
         //bubbleSort(array,length);
 
         //insertSort(array,length);
+
+        selectSort(array,length);
+    }
+
+    /**
+     * 选择排序：将数组分为有序区和无序区，从无序区取最小值与无序区第一个元素交换，从而保证有序区一直有序，无序区为空即可
+     *      初始时有序区大小为0
+     * @param array
+     * @param length
+     */
+    private static void selectSort(int[] array, int length) {
+        if(length<=1) {
+            return;
+        }
+        for(int i=0;i<length-1;i++) {
+            //进行第i次比较，交换
+            int k=i;
+            //将当前元素与后面的元素依次比较，
+            for(int j=k+1;j<length;j++) {
+                if(array[j] < array[k]) {
+                    //记录当前最小值所在的下标
+                    k = j;
+                }
+            }
+            //无序区最小值和无序区第一个元素交换
+            if(k!=i) {
+                int temp = array[i];
+                array[i] = array[k];
+                array[k] = temp;
+            }
+        }
     }
 
     /**
